@@ -5,7 +5,7 @@ def counting_sort(A, exp):
     for i in A:
         index = (i // exp) % 10
         count_array[index] += 1
-
+    # print(count_array)
     for i in range(1, len(count_array)):
         count_array[i] += count_array[i-1]
 
@@ -13,7 +13,6 @@ def counting_sort(A, exp):
         index = (A[i] // exp) % 10
         ans_array[count_array[index]-1] = A[i]
         count_array[index] -= 1
-
     return ans_array
 
 
